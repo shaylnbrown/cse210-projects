@@ -14,7 +14,7 @@ namespace Develop04
 
     public void CreateEntry()
     {
-        _prompt=GetRandomPrompt();
+        _prompt=Prompt.GetRandomPrompt();
         Console.Write(_prompt + " ");
         _answer = Console.ReadLine();
         _date = DateTime.Now;
@@ -37,14 +37,7 @@ namespace Develop04
     }
 
 
-    public string GetRandomPrompt()
-    {
-        string filename = "PromptList.txt";
-        string[] lines = System.IO.File.ReadAllLines(filename);
-        Random rnd = new Random();
-        int promptIndex = rnd.Next(0,lines.Length);
-        return lines[promptIndex];
-    }
+    
         
     }
 }
