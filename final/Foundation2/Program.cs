@@ -13,7 +13,7 @@ class Program
         Console.WriteLine();
         Console.WriteLine("Order 1");
         Console.WriteLine($"Shipping Label:\n{orderList[0].GetShippingLabel()}");
-        Console.WriteLine($"Total Order Cost: ${orderList[0].GetTotalCost()}");
+        Console.WriteLine($"Total Order Cost: ${orderList[0].GetTotalCost()} + ${orderList[0].GetShippingCost()} shipping");
         Console.WriteLine($"Packing Label:\n{orderList[0].GetPackingLabel()}");      
         orderList.Add(new Order());
         orderList[1].CreateDemoCustomer(1);
@@ -21,7 +21,7 @@ class Program
         Console.WriteLine();
         Console.WriteLine("Order 2");
         Console.WriteLine($"Shipping Label:\n{orderList[1].GetShippingLabel()}");
-        Console.WriteLine($"Total Order Cost: ${orderList[1].GetTotalCost()}");
+        Console.WriteLine($"Total Order Cost: ${orderList[1].GetTotalCost()} + ${orderList[1].GetShippingCost()} shipping");
         Console.WriteLine($"Packing Label:\n{orderList[1].GetPackingLabel()}");
         Console.WriteLine();
     }

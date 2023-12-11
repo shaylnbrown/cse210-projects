@@ -35,6 +35,12 @@ namespace Foundation2
             return output;
         }
 
+        public double GetShippingCost()
+        {
+            if (_customer.IsUSA()) return 5;
+            else return 35;
+        }
+
         public void CreateDemoCustomer(int customerSet)
         {
             if (customerSet == 0) _customer=new Customer("Brown Engineering","3120 Heatherton Dr","Florissant","Missouri","USA");
