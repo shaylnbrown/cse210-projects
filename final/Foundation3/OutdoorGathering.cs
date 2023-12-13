@@ -12,5 +12,10 @@ namespace Foundation3
         {            
             _weather = weather;
         }
+
+        public string GetFullDetails()
+        {
+            return $"Event type: {_type}\n{GetStandardDetails()}\nWeather: {_weather}";
+        }
     }
 }

@@ -7,15 +7,16 @@ namespace Foundation3
 {
     public class Event
     {
-        string _type="";
-        string _title="";
-        string _description="";
-        string _date="";
-        string _time="";
-        Address _address;
+        protected string _type="";
+        protected string _title="";
+        protected string _description="";
+        protected string _date="";
+        protected string _time="";
+        protected Address _address;
 
         public Event(string type, string title, string description, string date, string time, string streetAddress, string city, string state, int zipCode)
         {
+            _type = type;
             _title = title;
             _description = description;
             _date = date;

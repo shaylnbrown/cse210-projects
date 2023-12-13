@@ -14,5 +14,10 @@ namespace Foundation3
             _speaker = speaker;
             _capacity = capacity;
         }
+
+        public string GetFullDetails()
+        {
+            return $"Event type: {_type}\n{GetStandardDetails()}\nSpeaker: {_speaker}\nCapacity: {_capacity}";
+        }
     }
 }
