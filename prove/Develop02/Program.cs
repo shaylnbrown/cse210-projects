@@ -34,7 +34,7 @@ class Program
         List<JournalEntry> entryListIN = new List<JournalEntry>();
         Console.Write("What is the filename? ");
         string fileName = Console.ReadLine();
-        string[] lines=System.IO.File.ReadAllLines(fileName);
+        string[] lines = System.IO.File.ReadAllLines(fileName);
         foreach (string line in lines)
         {
             string[] chunks = line.Split('|');
