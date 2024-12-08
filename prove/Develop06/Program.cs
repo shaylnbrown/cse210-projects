@@ -125,8 +125,7 @@ class Program
             output += $"\nEternal Goal Tally: {tally[1]}";
             output += $"\nCheck List Goal Tally: {tally[2]}";
 
-        }
-        
+        }        
         return output;
     }
 
