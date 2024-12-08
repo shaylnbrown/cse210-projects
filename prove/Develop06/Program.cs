@@ -57,7 +57,7 @@ class Program
                     type = line.Split('|')[0];
                     if (type == "SimpleGoal") goalList.Add(new SimpleGoal(line));
                     if (type == "EternalGoal") goalList.Add(new EternalGoal(line));
-                    if (type == "ChecklistGoal") goalList.Add(new ChecklistGoal(line));
+                    if (type == "CheckListGoal") goalList.Add(new ChecklistGoal(line));
                 }
                 totalPoints = TallyPoints(goalList);                
                 Console.WriteLine($"{goalLines.Length} goals have been loaded.");
@@ -95,24 +95,38 @@ class Program
         Console.WriteLine("  2. List Goals");
         Console.WriteLine("  3. Save Goals");
         Console.WriteLine("  4. Load Goals");
-        Console.WriteLine("  5. Record Event");
+        Console.WriteLine("  5. Record Event");        
         Console.WriteLine("  6. Quit");        
         return int.Parse(Console.ReadLine());        
     }
 
     static private string DisplayAllGoals(List<SimpleGoal> goalsToDisplay)
     {        
+        string strText="";
+        int[] tally = new int[3];        
         string output = "";
         int index = 0;
         while (index < goalsToDisplay.Count)
         {
-            if (output != "") output += "\n";
+            if (output != "") output += "\n";            
+            if (goalsToDisplay[index].GetType() == "SimpleGoal") tally[0] += goalsToDisplay[index].GetTally();
+            if (goalsToDisplay[index].GetType() == "EternalGoal") tally[1] += goalsToDisplay[index].GetTally();
+            if (goalsToDisplay[index].GetType() == "CheckListGoal") tally[2] += goalsToDisplay[index].GetTally();
             output += $"{index + 1}. {goalsToDisplay[index].DisplayGoal()}";
             index++;
         } 
 
-        if (output == "") output = "There are no goals yet.";
 
+        if (output == "") output = "There are no goals yet.";
+        else 
+        {
+            output += "\n";
+            output += $"\nSimple Goal Tally: {tally[0]}";
+            output += $"\nEternal Goal Tally: {tally[1]}";
+            output += $"\nCheck List Goal Tally: {tally[2]}";
+
+        }
+        
         return output;
     }
 

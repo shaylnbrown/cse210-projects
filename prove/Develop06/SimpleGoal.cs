@@ -11,6 +11,7 @@ namespace Develop05
         protected string _description="";
         protected int _completionPoints=0;
         protected int _completionTally=0;
+        protected string _type="";
 
         public SimpleGoal()
         {
@@ -19,6 +20,7 @@ namespace Develop05
         public SimpleGoal(string textLine)
         {
             string[] chunks=textLine.Split('|');
+            _type = chunks[0];
             _name = chunks[1];
             _description = chunks[2];
             _completionPoints = int.Parse(chunks[3]);
@@ -61,6 +63,11 @@ namespace Develop05
         public int GetTally()
         {
             return _completionTally;
+        }
+
+        public string GetType()
+        {
+            return _type;
         }
 
     }

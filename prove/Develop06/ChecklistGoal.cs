@@ -31,7 +31,7 @@ namespace Develop05
 
         public override string SaveGoal()
         {
-            return "SimpleGoal|" + _name + "|" + _description + "|" + _stepPoints + "|" + _completionTally + "|" + _stepTotal + "|" + _completionBonus;
+            return "CheckListGoal|" + _name + "|" + _description + "|" + _stepPoints + "|" + _completionTally + "|" + _stepTotal + "|" + _completionBonus;
         }
 
         public override string DisplayGoal()

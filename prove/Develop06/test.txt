@@ -1,3 +1,3 @@
 SimpleGoal|Pass CSE 210|Pass this class with a 70 or better|100|0
-EternalGoal|Temple|Attend the Temple|50|0
-SimpleGoal|Read Scriptures|Read the scriptures 7 days|20|0|7|200
+EternalGoal|Temple|Attend the Temple|50|50
+CheckListGoal|Read Scriptures|Read the scriptures 7 days|20|40|7|200
