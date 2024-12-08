@@ -26,7 +26,7 @@ namespace Develop05
 
         public override string DisplayGoal()
         {
-            string complete = " ";            
+            string complete = "-";            
             return $"[{complete}] {_name} ({_description})";
         }
 

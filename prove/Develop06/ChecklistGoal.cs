@@ -15,7 +15,7 @@ namespace Develop05
         public ChecklistGoal()
         {
             _stepPoints = _completionPoints;
-            Console.WriteLine("How many time doe sthis goal need to be completed for a bonus? ");
+            Console.WriteLine("How many time does this goal need to be completed for a bonus? ");
             _stepTotal = int.Parse(Console.ReadLine());
             Console.WriteLine("What is the bonus for accomplishing it that many times? ");
             _completionBonus = int.Parse(Console.ReadLine());
@@ -37,7 +37,7 @@ namespace Develop05
         public override string DisplayGoal()
         {
             string complete = " ";
-            if (_completionTally >= (_stepPoints * _stepTotal)) complete = "X";
+            if (_completionTally >= (_stepPoints * _stepTotal) + _completionBonus) complete = "X";
             int soFar = _completionTally/_stepPoints;
             if (soFar > _stepTotal) soFar = _stepTotal;
             return $"[{complete}] {_name} ({_description}) -- Currently Completed: {soFar}/{_stepTotal}";
